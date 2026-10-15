@@ -1,0 +1,87 @@
+.pdp {
+  background: #fff;
+  border-radius: 8px;
+  margin: 16px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 320px;
+  gap: 32px;
+}
+
+.pdp-img {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.pdp-img img {
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.pdp-info h1 {
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+.pdp-sep {
+  border: none;
+  border-top: 1px solid #e7e7e7;
+  margin: 16px 0;
+}
+.pdp-price {
+  font-size: 28px;
+  font-weight: 500;
+}
+.pdp-price small {
+  font-size: 14px;
+  color: #565959;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+.pdp-desc {
+  line-height: 1.6;
+  color: #0f1111;
+}
+
+.pdp-buy {
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  padding: 18px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.pdp-buy-price {
+  font-size: 22px;
+  font-weight: 600;
+}
+.pdp-stock-in {
+  color: #007600;
+  font-size: 16px;
+}
+.pdp-stock-out {
+  color: #c40000;
+  font-size: 16px;
+}
+
+.pdp-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pdp-qty select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #d5d9d9;
+}
+
+.pdp-back {
+  display: inline-block;
+  margin: 16px 16px 0;
+}
+
+@media (max-width: 900px) {
+  .pdp {
+    grid-template-columns: 1fr;
+  }
+}

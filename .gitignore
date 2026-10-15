@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+storybook-static/
+
+# Environment files (never commit real secrets)
+.env
+.env.local
+*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Vercel
+.vercel
+
+# Temp screenshots used during verification
+.tmp-screenshots/
+
+# NOTE: .agent-logs/ is intentionally NOT ignored.
+# The 8x assignment requires the agent prompt/response logs to ship with the repo.

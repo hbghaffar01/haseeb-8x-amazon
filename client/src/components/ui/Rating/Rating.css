@@ -1,0 +1,34 @@
+.ui-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.ui-rating-stars {
+  letter-spacing: 1px;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.ui-star {
+  color: #e3e6e6;
+}
+.ui-star--full {
+  color: #de7921;
+}
+.ui-star--half {
+  background: linear-gradient(90deg, #de7921 50%, #e3e6e6 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ui-rating-value {
+  color: #0f1111;
+  font-weight: 500;
+}
+
+.ui-rating-count {
+  color: #007185;
+}

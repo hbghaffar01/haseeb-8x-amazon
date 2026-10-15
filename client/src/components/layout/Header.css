@@ -1,0 +1,240 @@
+.hdr {
+  background: var(--amz-navy);
+  color: #fff;
+}
+
+.hdr-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+}
+
+.hdr-logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+.hdr-logo span {
+  color: var(--amz-yellow);
+}
+.hdr-logo:hover {
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hdr-deliver {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  padding: 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+.hdr-deliver b {
+  font-size: 13px;
+}
+.hdr-deliver:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hdr-search {
+  flex: 1;
+  display: flex;
+  min-width: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.hdr-search input {
+  flex: 1;
+  border: none;
+  padding: 10px 12px;
+  font-size: 15px;
+  outline: none;
+  min-width: 0;
+}
+.hdr-search input:focus {
+  box-shadow: 0 0 0 3px var(--amz-yellow);
+}
+.hdr-search button {
+  background: var(--amz-yellow);
+  border: none;
+  padding: 0 16px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #0f1111;
+}
+.hdr-search button:hover {
+  background: #f3a847;
+}
+
+.hdr-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hdr-chip {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  color: #fff;
+  padding: 10px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+.hdr-chip b {
+  font-size: 14px;
+}
+.hdr-chip:hover {
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hdr-cart {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  color: #fff;
+  padding: 10px 8px;
+  border-radius: 4px;
+  position: relative;
+  transition: background 0.15s ease;
+}
+.hdr-cart:hover {
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.12);
+}
+.hdr-cart-icon {
+  font-size: 26px;
+  line-height: 1;
+}
+.hdr-cart-count {
+  position: absolute;
+  top: 2px;
+  left: 20px;
+  color: var(--amz-yellow);
+  font-weight: 700;
+  font-size: 16px;
+}
+.hdr-cart-label {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .hdr-deliver,
+  .hdr-chip-lang {
+    display: none;
+  }
+}
+
+/* Search box wrapper (relative anchor for suggestions dropdown) */
+.hdr-search-wrap {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  z-index: 200;
+}
+
+.hdr-search.is-open input {
+  box-shadow: 0 0 0 3px var(--amz-yellow);
+}
+
+/* Suggestions dropdown */
+.hdr-suggest {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 6px 14px rgba(15, 17, 17, 0.25);
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  max-height: 320px;
+  overflow-y: auto;
+}
+.hdr-suggest-item {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 9px 14px;
+  font-size: 14px;
+  color: #0f1111;
+  cursor: pointer;
+  font-family: inherit;
+}
+.hdr-suggest-item:hover {
+  background: #f3f3f3;
+}
+
+/* Full-page dim overlay */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease;
+  z-index: 100;
+}
+.search-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---- Responsive: tablets ---- */
+@media (max-width: 900px) {
+  .hdr-chip:not(.hdr-chip-lang) span:first-child {
+    display: none;
+  }
+  .hdr-logo {
+    font-size: 18px;
+  }
+}
+
+/* ---- Responsive: phones (iPhone / Samsung) ---- */
+@media (max-width: 640px) {
+  .hdr-main {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 10px;
+  }
+  .hdr-deliver {
+    display: none;
+  }
+  .hdr-search-wrap {
+    order: 3;
+    flex-basis: 100%;
+  }
+  .hdr-chip-lang {
+    display: none;
+  }
+  .hdr-chip b {
+    font-size: 12px;
+  }
+  .hdr-cart-label {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .hdr-chip {
+    padding: 8px 5px;
+  }
+  .hdr-logo {
+    font-size: 16px;
+  }
+}

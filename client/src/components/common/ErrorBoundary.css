@@ -1,0 +1,32 @@
+.eb {
+  display: flex;
+  justify-content: center;
+  padding: 48px 16px;
+}
+
+.eb-card {
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  padding: 32px;
+  max-width: 520px;
+  text-align: center;
+}
+
+.eb-card h2 {
+  margin-top: 0;
+  color: #c40000;
+}
+
+.eb-btn {
+  margin-top: 16px;
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.eb-btn:hover {
+  background: #f7ca00;
+}

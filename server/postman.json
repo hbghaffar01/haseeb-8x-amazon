@@ -1,0 +1,93 @@
+{
+  "info": {
+    "name": "Amazon Rebuild API (8x)",
+    "description": "Postman collection for the Express catalog + cart API. Set the {{baseUrl}} and {{cartId}} collection variables.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:4000/api" },
+    { "key": "cartId", "value": "postman-cart" }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/health", "host": ["{{baseUrl}}"], "path": ["health"] }
+      }
+    },
+    {
+      "name": "List categories",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/categories", "host": ["{{baseUrl}}"], "path": ["categories"] }
+      }
+    },
+    {
+      "name": "List products",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/products?category=electronics&search=&sort=price-asc",
+          "host": ["{{baseUrl}}"],
+          "path": ["products"],
+          "query": [
+            { "key": "category", "value": "electronics" },
+            { "key": "search", "value": "" },
+            { "key": "sort", "value": "price-asc" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get product by id",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/products/p1", "host": ["{{baseUrl}}"], "path": ["products", "p1"] }
+      }
+    },
+    {
+      "name": "Get cart",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "x-cart-id", "value": "{{cartId}}" }],
+        "url": { "raw": "{{baseUrl}}/cart", "host": ["{{baseUrl}}"], "path": ["cart"] }
+      }
+    },
+    {
+      "name": "Add cart item",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "x-cart-id", "value": "{{cartId}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"productId\": \"p1\",\n  \"quantity\": 2\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/cart/items", "host": ["{{baseUrl}}"], "path": ["cart", "items"] }
+      }
+    },
+    {
+      "name": "Update cart item quantity",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "x-cart-id", "value": "{{cartId}}" }
+        ],
+        "body": { "mode": "raw", "raw": "{\n  \"quantity\": 3\n}" },
+        "url": { "raw": "{{baseUrl}}/cart/items/p1", "host": ["{{baseUrl}}"], "path": ["cart", "items", "p1"] }
+      }
+    },
+    {
+      "name": "Remove cart item",
+      "request": {
+        "method": "DELETE",
+        "header": [{ "key": "x-cart-id", "value": "{{cartId}}" }],
+        "url": { "raw": "{{baseUrl}}/cart/items/p1", "host": ["{{baseUrl}}"], "path": ["cart", "items", "p1"] }
+      }
+    }
+  ]
+}

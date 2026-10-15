@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "8x Agent Capture (end-of-turn)",
+      "trigger": "Stop",
+      "description": "After each agent turn, append the verbatim prompt and final response to .agent-logs/ in the 8x format. Prompt + final response only; no thinking, tool calls, or intermediate steps. Local file writes only, no network.",
+      "action": {
+        "type": "command",
+        "command": "node \"${KIRO_PROJECT_DIR:-/Users/haseebghaffar/Desktop/8x}/.kiro/agent-capture/capture.mjs\""
+      }
+    }
+  ]
+}

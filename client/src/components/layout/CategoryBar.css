@@ -1,0 +1,40 @@
+.catbar {
+  background: var(--amz-navy-light);
+  color: #fff;
+}
+
+.catbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 12px;
+  overflow-x: auto;
+}
+
+.catbar-item {
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  position: relative;
+  transition: background 0.15s ease;
+}
+.catbar-item:hover {
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.12);
+}
+.catbar-item.is-active {
+  color: var(--amz-yellow);
+  font-weight: 600;
+}
+.catbar-item.is-active::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 2px;
+  height: 2px;
+  background: var(--amz-yellow);
+}

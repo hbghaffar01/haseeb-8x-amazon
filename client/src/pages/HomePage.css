@@ -1,0 +1,46 @@
+.home {
+  padding: 16px;
+}
+
+.home-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.home-title {
+  font-size: 20px;
+  margin: 0;
+}
+
+.home-sort {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.home-sort select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #d5d9d9;
+  font-family: inherit;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.home-msg {
+  padding: 24px;
+  text-align: center;
+  color: #565959;
+}
+.home-err {
+  color: #c40000;
+}
